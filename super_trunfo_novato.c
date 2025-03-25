@@ -5,7 +5,7 @@ int main() {
     // Declaração das variáveis para armazenar os dados da primeira cidade
     char estado, nome_cidade[30];
     int populacao, quant_pontos_turisticos, codigo_carta;
-    float area_cidade, PIB;
+    float area_cidade, PIB, densidade_populacional, per_capita;
 
     // Início da entrada de dados para a primeira carta
     printf("CARTA 1\n");
@@ -32,18 +32,25 @@ int main() {
     printf("Digite a area, em KM2, da cidade: ");
     scanf("%f", &area_cidade);
 
+    // Calcula o número de habitantes por quilomêtro quadrado 
+    densidade_populacional =  (float) populacao / area_cidade;
+
     // Solicita o PIB da cidade
     printf("Digite PIB da cidade: ");
     scanf("%f", &PIB);
+
+    // Calcula o riqueza média por pessoa
+    per_capita = (float) PIB / populacao;
 
     // Solicita o número de pontos turísticos da cidade
     printf("Digite o numero de pontos turisticos da cidade: ");
     scanf("%i", &quant_pontos_turisticos);
 
+
     // Declaração das variáveis para armazenar os dados da segunda cidade
     char estado2, nome_cidade2[30];
     int populacao2, quant_pontos_turisticos2, codigo_carta2;
-    float area_cidade2, PIB2;
+    float area_cidade2, PIB2, densidade_populacional2, per_capita2;
 
     // Limpa a tela para mostrar a segunda carta
     system("cls");
@@ -73,9 +80,15 @@ int main() {
     printf("Digite a area, em KM2, da cidade: ");
     scanf("%f", &area_cidade2);
 
+    // Calcula o número de habitantes por quilomêtro quadrado 
+    densidade_populacional2 = (float) populacao2 / area_cidade2;
+
     // Solicita o PIB da cidade para a segunda carta
     printf("Digite PIB da cidade: ");
     scanf("%f", &PIB2);
+
+    // Calcula o riqueza média por pessoa
+    per_capita2 = (float) PIB2 / populacao2;
 
     // Solicita o número de pontos turísticos da cidade para a segunda carta
     printf("Digite o numero de pontos turisticos da cidade: ");
@@ -92,7 +105,9 @@ int main() {
     printf("POPULACAO: %i\n", populacao);  // Exibe a população
     printf("AREA: %.2f KM2\n", area_cidade);  // Exibe a área com 2 casas decimais
     printf("PIB: %.2f bilhoes de reais\n", PIB);  // Exibe o PIB com 2 casas decimais
+    printf("DENSIDADE POPULACIONAL: %.2f hab/km2\n",  densidade_populacional);  // Exibe o a densidade populacional com 2 casas decimais  
     printf("PONTOS TURISTICOS: %i\n", quant_pontos_turisticos);  // Exibe o número de pontos turísticos
+    printf("PIB per Capita: %.2f\n", per_capita);  // Exibe a riqueza média por pessoa
 
     // Exibe as informações coletadas para a segunda carta
     printf("\nCARTA 2\n");
@@ -101,8 +116,10 @@ int main() {
     printf("NOME DA CIDADE: %s", nome_cidade2);  // Exibe o nome da cidade
     printf("POPULACAO: %i\n", populacao2);  // Exibe a população
     printf("AREA: %.2f KM2\n", area_cidade2);  // Exibe a área com 2 casas decimais
+    printf("DENSIDADE POPULACIONAL: %.2f hab/km2\n",  densidade_populacional2);  // Exibe o a densidade populacional com 2 casas decimais 
     printf("PIB: %.2f bilhoes de reais\n", PIB2);  // Exibe o PIB com 2 casas decimais
     printf("PONTOS TURISTICOS: %i\n", quant_pontos_turisticos2);  // Exibe o número de pontos turísticos
+    printf("PIB per Capita: %.2f\n", per_capita2);  // Exibe a riqueza média por pessoa
 
     return 0;  // Retorno do programa
 }
