@@ -143,16 +143,20 @@ int main() {
     printf("SUPER PODER: %.2f\n", super_poder2);  // Exibe a soma de todos os valores numéricos
 
     printf("\nComparacao de Cartas\n");
-    printf("------------------------\n");
-    printf("LEGENDA: Para resultados verdadeiros(1), a carta 1 eh a vencedora. Para resultados falsos(0), a carta 2 eh a vencedora\n\n");
+    printf("\nATRIBUTO: Densidade Populacional\n\n");
 
-    printf("Populacao: %i\n", populacao > populacao2);
-    printf("Area: %i\n", area_cidade > area_cidade2);
-    printf("PIB: %i\n", PIB > PIB2);
-    printf("Ponto Turisticos: %i\n", quant_pontos_turisticos > quant_pontos_turisticos2);
-    printf("Densidade Populacional: %i\n", densidade_populacional < densidade_populacional2);
-    printf("PIB per Capita: %i\n", per_capita > per_capita2);
-    printf("Super Poder: %i\n", super_poder > super_poder2);
+
+    // Compara o atributo em especifico entre as cartas e determina o vencedor 
+
+    if (densidade_populacional < densidade_populacional2)
+    {
+        printf("RESULTADO: A carta 1 (%s) venceu\n", nome_cidade);
+    } else{
+        printf("RESULTADO: A carta 2 (%s) venceu\n", nome_cidade2);
+    }
+    
+
+    
 
     
     return 0;  // Retorno do programa
